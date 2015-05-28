@@ -1,2 +1,2 @@
 # simplegui
-First shot at tkinter/gui
+First shot at tkinter gui!
