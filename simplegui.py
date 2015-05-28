@@ -57,7 +57,7 @@ class simpleapp_tk(Tkinter.Tk):
         self.entryTop= Tkinter.StringVar()
         self.entry = Tkinter.Entry(self, textvariable=self.entryTop)
         self.entry.grid(column=2,row=1, columnspan=6, sticky='EW')
-        self.entryTop.set(u"")
+        self.entryTop.set(u"A Test!")
 
         #Label for Bottom Entry
         self.labelBotEntry = Tkinter.StringVar()
@@ -103,12 +103,14 @@ class simpleapp_tk(Tkinter.Tk):
     #Event Handlers:
 
     def OnButtonConvertClick(self):
-        strConvert = str(self.entryTop.get)
-        print strConvert
-        self.entryBot.set(strConvert.replace(" ", "q1x1"))
+        strConvert = str(self.entryTop.get())
+        self.entryBot.set(strConvert.replace(" ", "q1x1").replace
+                          ("!", "q2x2"))
 
     def OnButtonRevertClick(self):
-        pass
+        strRevert = str(self.entryBot.get())
+        self.entryTop.set(strRevert.replace("q1x1", " ").replace
+                          ("q2x2", "!"))
 
 
 
@@ -116,10 +118,5 @@ class simpleapp_tk(Tkinter.Tk):
 
 if __name__ == "__main__":
     app = simpleapp_tk(None)
-    app.title('My App')
+    app.title('ArcFriendly Strings')
     app.mainloop()
-
-
-
-
-
